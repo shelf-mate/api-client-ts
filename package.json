@@ -1,0 +1,28 @@
+{
+  "name": "@shelf-mate/api-client-ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shelf-mate/api-client-ts.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "version": "1.0.8",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.6.2",
+    "axios": "^1.7.7"
+  },
+  "peerDependencies": {
+    "axios": "^1.7.7"
+  }
+}

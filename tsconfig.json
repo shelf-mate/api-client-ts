@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "target": "ES6", // Targeting ES6 for modern browsers
+        "module": "ESNext", // Use ESNext module system
+        "lib": [
+            "DOM",
+            "ES6"
+        ], // Include DOM and ES6 libraries
+        "outDir": "./dist", // Output directory for compiled files
+        "rootDir": "./src", // Root directory for source files
+        "declaration": true, // Generate .d.ts files
+        "jsx": "react", // Support for JSX
+        "esModuleInterop": true, // Enable interoperability between CommonJS and ES Modules
+        "moduleResolution": "node" // Module resolution strategy
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
+}
