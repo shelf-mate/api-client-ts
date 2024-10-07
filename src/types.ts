@@ -6,6 +6,7 @@ export interface Dates {
 }
 
 export type Response<T> = { message: string; data: T } | AxiosError;
+export type WithoutDates<T> = Omit<T, "createdAt" | "updatedAt">;
 
 export interface Category extends Dates {
   id: string;
