@@ -25,3 +25,15 @@ export const updateProduct = async (
 export const deleteProduct = async (id: string): Promise<Response<Product>> => {
   return (await getClient().delete(`/products/${id}`)).data;
 };
+
+export const getProductsByStorage = async (
+    storageId: string
+): Promise<Response<Product[]>> => {
+  return (await getClient().get(`/storages/${storageId}/products`)).data;
+};
+
+export const getProductsByCategory = async (
+    categoryId: string
+): Promise<Response<Product[]>> => {
+  return (await getClient().get(`/categories/${categoryId}/products`)).data;
+};
