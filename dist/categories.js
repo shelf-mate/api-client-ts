@@ -23,3 +23,6 @@ export const updateCategory = (id, category) => __awaiter(void 0, void 0, void 0
 export const deleteCategory = (id) => __awaiter(void 0, void 0, void 0, function* () {
     return (yield getClient().delete(`/categories/${id}`)).data;
 });
+export const getCategoryProducts = (id) => __awaiter(void 0, void 0, void 0, function* () {
+    return (yield getClient().get(`/categories/${id}/products`)).data;
+});
