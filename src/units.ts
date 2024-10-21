@@ -1,5 +1,5 @@
 import { getClient } from "./client";
-import { Unit, Response, WithoutDates } from "./types";
+import { Unit, Response, SimpleCreateData } from "./types";
 
 export const getUnits = async (): Promise<Response<Unit[]>> => {
   return (await getClient().get("/units")).data;
@@ -10,14 +10,14 @@ export const getUnit = async (id: string): Promise<Response<Unit>> => {
 };
 
 export const createUnit = async (
-  unit: WithoutDates<Unit>
+  unit: SimpleCreateData<Unit>
 ): Promise<Response<Unit>> => {
   return (await getClient().post("/units", unit)).data;
 };
 
 export const updateUnit = async (
   id: string,
-  unit: Partial<WithoutDates<Unit>>
+  unit: Partial<SimpleCreateData<Unit>>
 ): Promise<Response<Unit>> => {
   return (await getClient().put(`/units/${id}`, unit)).data;
 };

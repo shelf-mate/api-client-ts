@@ -1,5 +1,5 @@
 import { getClient } from "./client";
-import { Product, Response, WithoutDates } from "./types";
+import { Product, ProductCreateData, Response } from "./types";
 
 export const getProducts = async (): Promise<Response<Product[]>> => {
   return (await getClient().get("/products")).data;
@@ -10,14 +10,14 @@ export const getProduct = async (id: string): Promise<Response<Product>> => {
 };
 
 export const createProduct = async (
-  product: WithoutDates<Product>
+  product: ProductCreateData
 ): Promise<Response<Product>> => {
   return (await getClient().post("/products", product)).data;
 };
 
 export const updateProduct = async (
   id: string,
-  product: Partial<WithoutDates<Product>>
+  product: Partial<ProductCreateData>
 ): Promise<Response<Product>> => {
   return (await getClient().put(`/products/${id}`, product)).data;
 };
@@ -27,13 +27,13 @@ export const deleteProduct = async (id: string): Promise<Response<Product>> => {
 };
 
 export const getProductsByStorage = async (
-    storageId: string
+  storageId: string
 ): Promise<Response<Product[]>> => {
   return (await getClient().get(`/storages/${storageId}/products`)).data;
 };
 
 export const getProductsByCategory = async (
-    categoryId: string
+  categoryId: string
 ): Promise<Response<Product[]>> => {
   return (await getClient().get(`/categories/${categoryId}/products`)).data;
 };

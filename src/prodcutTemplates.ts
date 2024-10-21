@@ -1,5 +1,5 @@
 import { getClient } from "./client";
-import { ProductTemplate, Response, WithoutDates } from "./types";
+import { ProductTemplate, ProductTemplateCreateData, Response } from "./types";
 
 export const getProductTemplates = async (): Promise<
   Response<ProductTemplate[]>
@@ -20,14 +20,14 @@ export const getProductTemplateByEan = async (
 };
 
 export const createProductTemplate = async (
-  productTemplate: WithoutDates<ProductTemplate>
+  productTemplate: ProductTemplateCreateData
 ): Promise<Response<ProductTemplate>> => {
   return (await getClient().post("/productTemplates", productTemplate)).data;
 };
 
 export const updateProductTemplate = async (
   id: string,
-  productTemplate: Partial<WithoutDates<ProductTemplate>>
+  productTemplate: Partial<ProductTemplateCreateData>
 ): Promise<Response<ProductTemplate>> => {
   return (await getClient().put(`/productTemplates/${id}`, productTemplate))
     .data;

@@ -1,5 +1,5 @@
 import { getClient } from "./client";
-import { Storage, Response, WithoutDates } from "./types";
+import { Storage, Response, SimpleCreateData, Product } from "./types";
 
 export const getStorages = async (): Promise<Response<Storage[]>> => {
   return (await getClient().get("/storages")).data;
@@ -10,14 +10,14 @@ export const getStorage = async (id: string): Promise<Response<Storage>> => {
 };
 
 export const createStorage = async (
-  storage: WithoutDates<Storage>
+  storage: SimpleCreateData<Storage>
 ): Promise<Response<Storage>> => {
   return (await getClient().post("/storages", storage)).data;
 };
 
 export const updateStorage = async (
   id: string,
-  storage: Partial<WithoutDates<Storage>>
+  storage: Partial<SimpleCreateData<Storage>>
 ): Promise<Response<Storage>> => {
   return (await getClient().put(`/storages/${id}`, storage)).data;
 };
