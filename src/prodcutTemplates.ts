@@ -29,7 +29,7 @@ export const updateProductTemplate = async (
   id: string,
   productTemplate: Partial<ProductTemplateCreateData>
 ): Promise<Response<ProductTemplate>> => {
-  return (await getClient().put(`/productTemplates/${id}`, productTemplate))
+  return (await getClient().patch(`/productTemplates/${id}`, productTemplate))
     .data;
 };
 

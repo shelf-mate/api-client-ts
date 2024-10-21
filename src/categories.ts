@@ -19,7 +19,7 @@ export const updateCategory = async (
   id: string,
   category: Partial<SimpleCreateData<Category>>
 ): Promise<Response<Category>> => {
-  return (await getClient().put(`/categories/${id}`, category)).data;
+  return (await getClient().patch(`/categories/${id}`, category)).data;
 };
 
 export const deleteCategory = async (

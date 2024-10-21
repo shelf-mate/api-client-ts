@@ -19,7 +19,7 @@ export const updateStorage = async (
   id: string,
   storage: Partial<SimpleCreateData<Storage>>
 ): Promise<Response<Storage>> => {
-  return (await getClient().put(`/storages/${id}`, storage)).data;
+  return (await getClient().patch(`/storages/${id}`, storage)).data;
 };
 
 export const deleteStorage = async (id: string): Promise<Response<Storage>> => {

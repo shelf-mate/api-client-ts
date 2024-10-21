@@ -19,7 +19,7 @@ export const updateUnit = async (
   id: string,
   unit: Partial<SimpleCreateData<Unit>>
 ): Promise<Response<Unit>> => {
-  return (await getClient().put(`/units/${id}`, unit)).data;
+  return (await getClient().patch(`/units/${id}`, unit)).data;
 };
 
 export const deleteUnit = async (id: string): Promise<Response<Unit>> => {

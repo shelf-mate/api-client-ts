@@ -19,7 +19,7 @@ export const updateProduct = async (
   id: string,
   product: Partial<ProductCreateData>
 ): Promise<Response<Product>> => {
-  return (await getClient().put(`/products/${id}`, product)).data;
+  return (await getClient().patch(`/products/${id}`, product)).data;
 };
 
 export const deleteProduct = async (id: string): Promise<Response<Product>> => {
