@@ -59,7 +59,7 @@ export interface Product extends Dates {
   type?: string;
   quantity: number;
   ean?: string;
-  expirationDate: number;
+  expirationDate: Date;
   description?: string;
   unit: Unit;
   storage: Storage;
